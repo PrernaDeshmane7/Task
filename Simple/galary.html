@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Photo Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f8f8f8;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Dynamic columns */
+            gap: 20px; /* Space between images */
+            max-width: 90%;
+            padding: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 100%; /* Prevents distortion */
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="img/mehandi8.jpeg" alt="Mehandi">
+        <img src="img/mehandi9.jpeg" alt="Mehandi 1">
+        <img src="img/mehandi6.jpeg" alt="Mehandi 2">
+        <img src="img/mehandi2.jpeg" alt="Mehandi 3">
+        <img src="img/mehandi11.jpeg" alt="Mehandi 4">
+        <img src="img/mehandi12.jpeg" alt="Mehandi 5">
+    </div>
+</body>
+</html>

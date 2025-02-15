@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+           .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+            gap: 20px;
+            max-width: 100%;
+            padding: 10px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 70%; 
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .video-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts layout dynamically */
+        gap: 15px;
+        max-width: 90%;
+        margin: auto;
+    }
+        .slider {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            height: 70vh;
+            position: relative;
+        }
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 100%;
+            animation: slide 9s infinite;
+        }
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: right;
+            }
+        }
+
+/* Reduce size on smaller screens */
+@media (max-width: 768px) {
+    .slider {
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        max-width: 100%;
+    }
+
+    .slides img {
+        height: 200px; /* Adjust height for smaller screens */
+        object-fit: cover;
+    }
+    .home{
+        max-width: 100%;
+        height: 300px;
+    }
+    
+
+}
+/* Medium screens (tablets) */
+@media screen and (max-width: 768px) {
+    .aboutus-img {
+        max-width: 150px; /* Increase size on tablets */
+    }
+}
+
+/* Small screens (mobile) */
+@media screen and (max-width: 480px) {
+    .aboutus-img {
+        max-width: 100px; /* Increase size further on mobile */
+    }
+}
+
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            33% { transform: translateX(-100%); }
+            66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+            
+        }
+       
+    </style>
+</head>
+<body class="bg-gray-50">
+    
+    <!-- Navigation Bar -->
+    
+
+    <nav class="sticky top-0 bg-emerald-800 text-white shadow-lg p-4 z-50">
+        <div class="p-3 flex justify-between items-center">
+            <p class="text-lg font-bold"><i>MuskanMehandi</i></p>
+            <i> <ul class="space-x-4 justify-end flex">
+                <li><a href="#home" class="hover:text-orange-200">Home</a></li>
+                <li><a href="#gallery" class="hover:text-orange-200">Gallery</a></li>
+                <li><a href="#videos" class="hover:text-orange-200">Videos</a></li>
+                <li><a href="#aboutus" class="hover:text-orange-200">About Us</a></li>
+            </ul></i>
+        </div>
+    </nav>
+    <!-- Main Content -->
+    <main class="container mx-auto p-6">
+        <section id="home" class="bg-white p-4 rounded shadow-lg border mb-6 home">
+          
+            <div class="slider">
+                <div class="slides">
+                    <img src="img/wallpaper1.jpg" alt="Wallpaper 1">
+                    <img src="img/wallpaper2.jpg" alt="Wallpaper 2">
+                    <img src="img/wallpaper1.jpg" alt="Wallpaper 3">
+                    <img src="img/wallpaper2.jpg" alt="Wallpaper 3">
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="gallery" class="bg-white p-6 rounded shadow-lg border mb-6 w-full text-center">
+            <h2 class="text-xl text-center mb-6"><i>Our Gallery</i></h2>
+            <div class="gallery">
+                <img src="img/mehandi8.jpeg" alt="Mehandi">
+                <img src="img/mehandi9.jpeg" alt="Mehandi 1">
+                <img src="img/mehandi6.jpeg" alt="Mehandi 2">
+                <img src="img/mehandi2.jpeg" alt="Mehandi 3">
+                <img src="img/mehandi11.jpeg" alt="Mehandi 4">
+                <img src="img/mehandi12.jpeg" alt="Mehandi 5">
+                <img src="img/mehandi13.jpeg" alt="Mehandi 6">
+                <img src="img/mehandi14.jpeg" alt="Mehandi 7">
+                <img src="img/mehandi7.jpeg" alt="Mehandi 8">
+                <img src="img/mehandi6.jpeg" alt="Mehandi 9">
+            </div>
+        </section>
+        <section id="videos" class="bg-white p-6 rounded mb-6 shadow-lg border text-center">
+            <h2 class="text-xl font-semibold mb-6"><i>Our Video Gallery</i></h2>
+            <div class="video-grid">
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/XX4auC_2etI" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/zMXhXFGSByY" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/quvgx99mKRs" title="Mera Safar🦋🫶😍" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="100%" height="250" src="https://www.youtube.com/embed/jgfL25Ew_3c" frameborder="0" allowfullscreen></iframe>
+                </div>
+        </section>
+        <section id="aboutus" class="bg-white p-4 rounded-lg border shadow-lg mb-6">
+            <h2 class="text-xl font-semibold italic">About Us</h2>
+            <p class="text-gray-700">Welcome to Muskan Mehndi Art! We specialize in beautiful and intricate mehndi designs, bringing creativity and elegance to every occasion.</p>
+            <div class="flex items-center justify-between mt-4">
+                <div class="flex flex-col space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <i class="fab fa-youtube text-red-500 text-3xl"></i>
+                        <a href="https://www.youtube.com/@Muskan_mehndi11" target="_blank" class="text-gray-800 hover:text-orange-900">Muskan Mehndi Art</a>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-phone-alt text-green-500 text-3xl"></i>
+                        <a href="tel:9309959055" class="text-gray-800 hover:text-orange-900">9309959055</a>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fab fa-instagram text-pink-500 text-3xl"></i>
+                        <a href="https://instagram.com/muskan__mehndiart" target="_blank" class="text-gray-800 hover:text-orange-800">@muskan__mehndiart</a>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-envelope text-orange-500 text-3xl"></i>
+                        <a href="mailto:muskannadaf7263@gmail.com" class="text-gray-800 hover:text-orange-900">muskannadaf7263@gmail.com</a>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center w-full  lg:w-1/4 mx-auto">
+                    <img src="img/mehandi.jpg" alt="Mehandi 4" class="rounded-lg shadow-md aboutus-img">
+                </div>
+                
+            </div>
+        </section>
+        
+        
+        
+    </main>
+    <div class="max-w-md mx-auto bg-gray-300 p-6 rounded shadow-md mt-6 mb-6">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Live Date & Time</h2>
+        
+        <div id="datetime" class="text-lg font-bold text-center bg-white text-gray-900 px-6 py-4 rounded-lg shadow-md">
+            Loading...
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div class="max-w-md mx-auto bg-white p-6 rounded shadow-md mt-6 border"> 
+        <h2 class="text-xl font-semibold mb-4">Login</h2>
+        <p id="error-message" class="text-red-600 mt-2"></p>
+        <form id="loginForm">
+            <label for="email" class="block mb-2">Email:</label>
+            <input type="email" id="email" name="email" class="w-full p-2 border rounded mb-4" >
+            
+            <label for="password" class="block mb-2">Password:</label>
+            <input type="password" id="password" name="password" class="w-full p-2 border rounded mb-4" >
+            
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Login</button>
+        </form>
+        
+    </div>
+   
+
+    
+    <!-- Footer -->
+    <footer class="bg-emerald-950 text-white text-center p-4 mt-6">
+        &copy; 2025 | PrernaDeshmane. All Rights Reserved.
+    </footer>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+        
+            let email = document.getElementById("email").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let errorMessage = document.getElementById("error-message");
+            
+            // Email Validation (Regex)
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test(email)) {
+                errorMessage.textContent = "Please enter a valid email address.";
+                return;
+            }
+        
+            // Password Validation (At least 8 characters)
+            if (password.length < 8) {
+                errorMessage.textContent = "Password must be at least 8 characters long.";
+                return;
+            }
+        
+            // If both validations pass
+            errorMessage.textContent = "";
+            alert("Login Successful!");
+        });
+
+        function updateTime() {
+            const now = new Date(); // Get current date and time
+            
+            // Format date as YYYY-MM-DD
+            let date = now.toLocaleDateString();
+
+            // Format time as HH:MM:SS AM/PM
+            let time = now.toLocaleTimeString();
+
+            // Display date and time
+            document.getElementById("datetime").innerHTML = `${date} | ${time}`;
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+
+        // Initial call to display time immediately when page loads
+        updateTime();
+        </script>
+
+</body>
+</html>
